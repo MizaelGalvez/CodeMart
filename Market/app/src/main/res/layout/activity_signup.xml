@@ -53,7 +53,7 @@
             android:id="@+id/btnSingn"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:background="@color/colorAccent"
-            android:text="@string/action_singup_in_short"
+            android:text="@string/action_sign_in_short"
             android:textColor="@android:color/black"
             android:textStyle="bold"/>
         <Button
