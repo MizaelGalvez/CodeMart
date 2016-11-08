@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MarketISI V0.0.1</string>
+    <string name="action_sign_in_short">Registrar</string>
+    <string name="email">Email</string>
+    <string name="minimum_password">Clave demaciada corta, ingrese un minimo de 6 caracteres </string>
+    <string name="auth_failed">Problemas de Autentificacion...</string>
+    <string name="change_email">Actualizar email</string>
+    <string name="change_password">Actualizar su password</string>
+    <string name="send_passwrod_reset_email">Enviar correo electronico para actualizar PW</string>
+    <string name="remove_user">Borrar Usuario</string>
+    <string name="new_password">Nuevo Password</string>
+    <string name="title_activity_profile">Perfil de Usuario</string>
+    <string name="title_activity_login">Inicio de Session</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Clave de Acceso</string>
+    <string name="hint_name">Nombre Completo</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="btn_link_registre">Crear Cuenta</string>
+    <string name="btn_link_login">Ya tengo cuenta, iniciar session!!</string>
+
+</resources>
