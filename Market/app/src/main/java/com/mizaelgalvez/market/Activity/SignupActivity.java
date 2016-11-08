@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.suzuma.marketisi.R;
+import com.mizaelgalvez.market.R;
 
 /**
  * Created by Mizael on 08/11/2016.
