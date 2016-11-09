@@ -1,7 +1,9 @@
 package com.mizaelgalvez.market.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -11,6 +13,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.mizaelgalvez.market.R;
 
 /**
@@ -22,6 +28,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText txtEmail, txtPassword;
     private Button btnSignup, btnSignin, btnResetpass;
     private ProgressBar progressBar;
+    private FirebaseAuth auth;
 
 
     @Override
@@ -40,6 +47,7 @@ public class SignupActivity extends AppCompatActivity {
         btnSignin=(Button) findViewById(R.id.btnIngresar);
         btnSignup=(Button) findViewById(R.id.btnSingn);
         btnResetpass=(Button) findViewById(R.id.btnResetpass);
+        auth=FirebaseAuth.getInstance();
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +67,19 @@ public class SignupActivity extends AppCompatActivity {
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE); //mostramos en control de ProgressBAR.
-
+                auth.createUserWithEmailAndPassword(txtEmail.getText().toString(), txtPassword.getText().toString()).addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Toast.makeText(SignupActivity.this,"Creaando la Cuenta", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(SignupActivity.this,"Error al crear la Cuenta", Toast.LENGTH_LONG).show();
+                        }else{
+                            //TODO: terminar el codigo para enviar a pantalla de inicio
+                            //startActivity(new Intent(this, finish();));
+                        }
+                    }
+                });
             }
         });
 
