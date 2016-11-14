@@ -16,7 +16,25 @@
     <string name="hint_password">Clave de Acceso</string>
     <string name="hint_name">Nombre Completo</string>
     <string name="btn_login">Ingresar</string>
-    <string name="btn_link_registre">Crear Cuenta</string>
+    <string name="btn_link_to_register">Crear Cuenta</string>
     <string name="btn_link_login">Ya tengo cuenta, iniciar session!!</string>
+
+    <string name="hint_new_email">nuevo Correo electronico</string>
+    <string name="prompt_password">contraseña actual</string>
+    <string name="new_pass">nueva contraseña</string>
+    <string name="btn_change">Guardar Cambios</string>
+    <string name="btn_send">Enviar</string>
+    <string name="btn_remove">Remover</string>
+    <string name="send_password_reset_email">enviar para resetear contraseña</string>
+    <string name="btn_sign_out">Cerrar Sesion</string>
+
+    <string name="lbl_forgot_password">Olvidaste tu Contraseña</string>
+    <string name="forgot_password_msg">olvide la contraseña</string>
+    <string name="btn_reset_password">resetear contraseña</string>
+    <string name="btn_back">Regresar</string>
+
+    <string name="btn_forgot_password">olvide la contraseña</string>
+    <string name="btn_link_to_login">ya tienen sesion, inicia aqui</string>
+
 
 </resources>

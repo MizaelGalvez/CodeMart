@@ -42,11 +42,11 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        txtEmail=(EditText) findViewById(R.id.txtEmail);
-        txtPassword=(EditText) findViewById(R.id.txtPassword);
-        btnSignin=(Button) findViewById(R.id.btnIngresar);
-        btnSignup=(Button) findViewById(R.id.btnSingn);
-        btnResetpass=(Button) findViewById(R.id.btnResetpass);
+        txtEmail=(EditText) findViewById(R.id.email);
+        txtPassword=(EditText) findViewById(R.id.password);
+        btnSignin=(Button) findViewById(R.id.btn_login);
+        btnSignup=(Button) findViewById(R.id.btn_signup);
+        btnResetpass=(Button) findViewById(R.id.btn_reset_password);
         auth=FirebaseAuth.getInstance();
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
