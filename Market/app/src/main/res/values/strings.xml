@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MarketISI V0.0.1</string>
+    <string name="app_name">CodeMART</string>
     <string name="action_sign_in_short">Registrar</string>
     <string name="action_forgot_password">Olvidaste la Contraseña?</string>
     <string name="email">Email</string>
