@@ -22,6 +22,7 @@
     <string name="txt_falta_email">debe ingresar un email!!</string>
     <string name="txt_falta_contraseña">debe ingresar una contraseña!!</string>
     <string name="txt_contraseña_muycorta">debe tener almenos 6 dgitos!!</string>
+    <string name="txt_error_envioEmail">Error Al enviar el email</string>
 
     <string name="hint_new_email">nuevo Correo electronico</string>
     <string name="prompt_password">contraseña actual</string>

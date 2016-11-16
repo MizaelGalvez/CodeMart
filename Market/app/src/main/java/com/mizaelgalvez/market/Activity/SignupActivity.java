@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.mizaelgalvez.market.MainActivity;
 import com.mizaelgalvez.market.R;
 
 /**
@@ -49,7 +50,7 @@ public class SignupActivity extends AppCompatActivity {
         btnResetpass=(Button) findViewById(R.id.btn_reset_password);
         auth=FirebaseAuth.getInstance();
 
-        btnSignin.setOnClickListener(new View.OnClickListener() {
+        btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //TODO: Programar el evento de ingreso
@@ -75,25 +76,27 @@ public class SignupActivity extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Toast.makeText(SignupActivity.this,"Error al crear la Cuenta", Toast.LENGTH_LONG).show();
                         }else{
-                            //TODO: terminar el codigo para enviar a pantalla de inicio
-                            //startActivity(new Intent(this, finish();));
+
+                            startActivity(new Intent(SignupActivity.this, MainActivity.class));
+                            finish();
                         }
                     }
                 });
             }
         });
 
-        btnSignup.setOnClickListener(new View.OnClickListener() {
+        btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: Programar el evento de registro
+                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+
             }
         });
 
         btnResetpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO:nprogramar el evento de resetear contraseña
+                startActivity(new Intent(SignupActivity.this, ResetPasswordActivity.class));
             }
         });
     }
