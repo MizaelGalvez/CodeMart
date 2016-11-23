@@ -93,24 +93,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 progresbar.setVisibility(View.VISIBLE);
                 if (user!=null){
-                    user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
+                            user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
 
-                            if (task.isSuccessful()){
-                                Toast.makeText(getApplicationContext(),"Perfil Eliminado", Toast.LENGTH_LONG);
-                                startActivity(new Intent(MainActivity.this, SignupActivity.class));
-                                finish();
-                                progresbar.setVisibility(View.GONE);
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(getApplicationContext(),"Perfil Eliminado", Toast.LENGTH_LONG);
+                                        startActivity(new Intent(MainActivity.this, SignupActivity.class));
+                                        finish();
+                                        progresbar.setVisibility(View.GONE);
 
-                            }else{
-                                Toast.makeText(getApplicationContext(),"Error al iliminar al usario", Toast.LENGTH_LONG);
-                                progresbar.setVisibility(View.GONE);
+                                    }else{
+                                        Toast.makeText(getApplicationContext(),"Error al iliminar al usario", Toast.LENGTH_LONG);
+                                        progresbar.setVisibility(View.GONE);
 
-                            }
+                                    }
 
 
-                        }
+                                }
                     });
                 }
 
@@ -125,7 +125,48 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    btnSendResetEmail.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
 
+            oldEmail.setVisibility(View.VISIBLE);
+            newEmail.setVisibility(View.GONE);
+            password.setVisibility(View.GONE);
+            newpassword.setVisibility(View.GONE);
+            changeemail.setVisibility(View.GONE);
+            changepassword.setVisibility(View.GONE);
+            sendresetemail.setVisibility(View.VISIBLE);
+            removeuser.setVisibility(View.GONE);
+
+            progresbar.setVisibility(View.VISIBLE);
+            if (user!=null && (oldEmail.getText().toString().trim().equals(""))){
+                auth.sendPasswordResetEmail(newEmail.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(getApplicationContext(),"Email Enviado", Toast.LENGTH_LONG);
+                            startActivity(new Intent(MainActivity.this, SignupActivity.class));
+                            finish();
+                            progresbar.setVisibility(View.GONE);
+
+                        }else{
+                            Toast.makeText(getApplicationContext(),"Error al Enviar Email", Toast.LENGTH_LONG);
+                            progresbar.setVisibility(View.GONE);
+
+                        }
+                    }
+                });
+
+
+            }else if (newEmail.getText().toString().trim().equals("")){
+
+                newEmail.setError("Ingresar el Email");
+                progresbar.setVisibility(View.GONE);
+
+            }
+
+        }
+    });
 
 
 
